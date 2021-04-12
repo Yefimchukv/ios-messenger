@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		85FAE5132623682300201AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5122623682300201AD3 /* AppDelegate.swift */; };
 		85FAE5152623682300201AD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5142623682300201AD3 /* SceneDelegate.swift */; };
-		85FAE5172623682300201AD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5162623682300201AD3 /* ViewController.swift */; };
+		85FAE5172623682300201AD3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5162623682300201AD3 /* WelcomeViewController.swift */; };
 		85FAE51A2623682300201AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FAE5182623682300201AD3 /* Main.storyboard */; };
 		85FAE51C2623682500201AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FAE51B2623682500201AD3 /* Assets.xcassets */; };
 		85FAE51F2623682500201AD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FAE51D2623682500201AD3 /* LaunchScreen.storyboard */; };
+		85FAE53126240FD700201AD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE53026240FD700201AD3 /* SignUpViewController.swift */; };
+		85FAE5342624100200201AD3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5332624100200201AD3 /* SignInViewController.swift */; };
+		85FAE5382624109100201AD3 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5372624109100201AD3 /* ChatsViewController.swift */; };
+		85FAE53B2624140E00201AD3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE53A2624140E00201AD3 /* SettingsViewController.swift */; };
+		85FAE53E2624141B00201AD3 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE53D2624141B00201AD3 /* ContactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85FAE50F2623682300201AD3 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FAE5122623682300201AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85FAE5142623682300201AD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85FAE5162623682300201AD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85FAE5162623682300201AD3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		85FAE5192623682300201AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85FAE51B2623682500201AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85FAE51E2623682500201AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85FAE5202623682500201AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85FAE53026240FD700201AD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		85FAE5332624100200201AD3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		85FAE5372624109100201AD3 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		85FAE53A2624140E00201AD3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85FAE53D2624141B00201AD3 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,60 @@
 		85FAE5112623682300201AD3 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				85FAE5122623682300201AD3 /* AppDelegate.swift */,
-				85FAE5142623682300201AD3 /* SceneDelegate.swift */,
-				85FAE5162623682300201AD3 /* ViewController.swift */,
-				85FAE5182623682300201AD3 /* Main.storyboard */,
-				85FAE51B2623682500201AD3 /* Assets.xcassets */,
-				85FAE51D2623682500201AD3 /* LaunchScreen.storyboard */,
+				85FAE52726240C6000201AD3 /* Sources */,
+				85FAE52926240C6900201AD3 /* Resources */,
 				85FAE5202623682500201AD3 /* Info.plist */,
 			);
 			path = Messenger;
+			sourceTree = "<group>";
+		};
+		85FAE52726240C6000201AD3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				85FAE52C26240C8C00201AD3 /* Models */,
+				85FAE5122623682300201AD3 /* AppDelegate.swift */,
+				85FAE5142623682300201AD3 /* SceneDelegate.swift */,
+				85FAE52A26240C7A00201AD3 /* Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		85FAE52926240C6900201AD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85FAE52D26240CA000201AD3 /* Views */,
+				85FAE51B2623682500201AD3 /* Assets.xcassets */,
+				85FAE51D2623682500201AD3 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		85FAE52A26240C7A00201AD3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85FAE5162623682300201AD3 /* WelcomeViewController.swift */,
+				85FAE53026240FD700201AD3 /* SignUpViewController.swift */,
+				85FAE5332624100200201AD3 /* SignInViewController.swift */,
+				85FAE5372624109100201AD3 /* ChatsViewController.swift */,
+				85FAE53A2624140E00201AD3 /* SettingsViewController.swift */,
+				85FAE53D2624141B00201AD3 /* ContactsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		85FAE52C26240C8C00201AD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85FAE52D26240CA000201AD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85FAE5182623682300201AD3 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85FAE5172623682300201AD3 /* ViewController.swift in Sources */,
+				85FAE5172623682300201AD3 /* WelcomeViewController.swift in Sources */,
 				85FAE5132623682300201AD3 /* AppDelegate.swift in Sources */,
+				85FAE53B2624140E00201AD3 /* SettingsViewController.swift in Sources */,
 				85FAE5152623682300201AD3 /* SceneDelegate.swift in Sources */,
+				85FAE5342624100200201AD3 /* SignInViewController.swift in Sources */,
+				85FAE53E2624141B00201AD3 /* ContactsViewController.swift in Sources */,
+				85FAE5382624109100201AD3 /* ChatsViewController.swift in Sources */,
+				85FAE53126240FD700201AD3 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
