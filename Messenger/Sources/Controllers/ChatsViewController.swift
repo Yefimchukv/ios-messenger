@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func newChatButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "newChats", sender: self)
     }
     
 
