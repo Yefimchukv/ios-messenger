@@ -17,18 +17,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let user = Auth.auth().currentUser {
-            print("You're sign in as \(user.uid), email: \(user.email ?? "Unknown")")
-            
-        }
-        
     }
-    
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //        performSegue(withIdentifier: "signInToChats", sender: self)
-    //    }
     
     //MARK: - Email/password Sign In
     
@@ -144,12 +133,6 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             alert.addAction(action)
             
             present(alert, animated: true, completion: nil)
-            
-            
-            
-            
-            
-            
         }
     }
 }

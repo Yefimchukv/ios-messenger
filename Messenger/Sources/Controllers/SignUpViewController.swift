@@ -18,14 +18,13 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func editingPasswordStopped(_ sender: UITextField) {
         sender.text = ""
         sender.placeholder = "Enter again, please"
     }
+    
     @IBAction func creatingAccountFinished(_ sender: UITextField) {
         
         guard let firstName = firstName.text, let lastName = lastName.text, let username = username.text, let email = email.text, let password = password.text  else {
@@ -33,11 +32,13 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        // MARK: - May not work correctly
         DatabaseManager.shared.userExists(with: email) { exists in
             guard !exists else {
                 print("User already exists")
                 return
             }
+            // MARK: -
             
             Auth.auth().createUser(withEmail: email, password: password) {[weak self] (authResult, error) in
                 guard let strongSelf = self else { return }
@@ -53,12 +54,8 @@ class SignUpViewController: UIViewController {
                         print("error")
                     }
                 })
-                
                 strongSelf.performSegue(withIdentifier: "signUpToChats", sender: strongSelf)
-            
-        }
-        
-        
+            }
         }
     }
 }

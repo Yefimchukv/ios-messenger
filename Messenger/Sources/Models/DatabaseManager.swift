@@ -8,21 +8,23 @@
 import Foundation
 import FirebaseDatabase
 
+// MARK: - DB describing
 final class DatabaseManager {
     
     static let shared = DatabaseManager()
-    
     private let database = Database.database().reference()
     
-    static func safeEmail(emailAdress: String) -> String {
-        var safeEmail = emailAdress.replacingOccurrences(of: ".", with: "-")
-        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        return safeEmail
-    }
+    //    static func safeEmail(emailAdress: String) -> String {
+    //        var safeEmail = emailAdress.replacingOccurrences(of: ".", with: "-")
+    //        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+    //        return safeEmail
+    //    }
+
 }
 
+//Extending with usersExists, insertUser, getAllUsers
 extension DatabaseManager {
-    
+    // MARK: - Cheching User's existance (May not work correctly)
     public func userExists(with email: String,
                            completion: @escaping ((Bool) -> Void)) {
         
@@ -39,6 +41,7 @@ extension DatabaseManager {
         })
     }
     
+    // MARK: - Inserting new user and writing the data to DB
     public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void) {
         database.child(user.safeEmail).setValue([
             "first_name": user.firstName,
@@ -95,7 +98,7 @@ extension DatabaseManager {
             completion(true)
         })
     }
-    
+    // MARK: - Getting all users for the search
     public func getAllUsers(completion: @escaping (Result<[[String: String]], Error>) -> Void) {
         database.child("users").observeSingleEvent(of: .value, with: { snapshot in
             guard let value = snapshot.value as? [[String: String]] else {

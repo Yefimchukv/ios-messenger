@@ -24,10 +24,9 @@ class NewChatsViewController: UIViewController {
         
         searchBar.becomeFirstResponder()
     }
-    
-    
 }
 
+// MARK: - Tableview description
 extension NewChatsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
@@ -44,6 +43,7 @@ extension NewChatsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - Search implementation
 extension NewChatsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
@@ -51,7 +51,7 @@ extension NewChatsViewController: UISearchBarDelegate {
         }
         results.removeAll()
         
-        self.searchUsers(query: text)
+        searchUsers(query: text)
     }
     
     func searchUsers(query: String) {
@@ -61,6 +61,7 @@ extension NewChatsViewController: UISearchBarDelegate {
         }
         else {
             //fetch
+            
             DatabaseManager.shared.getAllUsers(completion: { [weak self] result in
                 switch result {
                 case .success(let usersCollection):
@@ -95,9 +96,9 @@ extension NewChatsViewController: UISearchBarDelegate {
     }
     
     func updateUI() {
-        if !results.isEmpty {
+//        if !results.isEmpty {
             self.tableView.reloadData()
-        }
+//        }
     }
     
 }
