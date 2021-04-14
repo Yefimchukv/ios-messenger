@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="4774" y="1644"/>
         </scene>
-        <!--View Controller-->
+        <!--New Chats View Controller-->
         <scene sceneID="TY0-zo-8hY">
             <objects>
-                <viewController id="5E4-ml-9mw" sceneMemberID="viewController">
+                <viewController id="5E4-ml-9mw" customClass="NewChatsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThL-AP-OIU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,6 +290,9 @@
                                     <constraint firstAttribute="height" constant="48" id="t8I-Sl-j9w"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5E4-ml-9mw" id="MSg-4k-pGT"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-hb-eX7">
                                 <rect key="frame" x="0.0" y="48" width="390" height="708"/>
@@ -304,6 +307,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5E4-ml-9mw" id="5q6-YG-7Sy"/>
+                                    <outlet property="delegate" destination="5E4-ml-9mw" id="uJc-7m-OZ7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6iD-LU-4Sx"/>
@@ -319,6 +326,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ftm-Va-fbX"/>
+                    <connections>
+                        <outlet property="searchBar" destination="NSR-a2-2Th" id="9S4-58-SFJ"/>
+                        <outlet property="tableView" destination="Zfq-hb-eX7" id="anK-l5-W4R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-C2-aDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
