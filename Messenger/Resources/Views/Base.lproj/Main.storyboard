@@ -287,8 +287,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mXM-jg-KJ5" id="2dt-Mf-MK0"/>
-                        <segue destination="pIM-Qo-pcT" kind="show" identifier="userToChat" id="bwu-LJ-tI5"/>
-                        <segue destination="5E4-ml-9mw" kind="showDetail" identifier="newChats" id="ght-O7-KL4"/>
+                        <segue destination="pIM-Qo-pcT" kind="show" identifier="" id="bwu-LJ-tI5"/>
+                        <segue destination="5E4-ml-9mw" kind="showDetail" identifier="" id="ght-O7-KL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qou-Om-ycs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,6 +298,7 @@
         <!--Search-->
         <scene sceneID="TY0-zo-8hY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-C2-aDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="5E4-ml-9mw" customClass="NewChatsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThL-AP-OIU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
@@ -350,13 +351,13 @@
                         <outlet property="tableView" destination="Zfq-hb-eX7" id="anK-l5-W4R"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-C2-aDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4302" y="2379"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="GzB-nL-J0K">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzj-h6-Fbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pIM-Qo-pcT" customClass="ChatViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wux-bv-Vim">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -366,9 +367,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="wWl-PG-aV8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzj-h6-Fbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5685" y="2379"/>
+            <point key="canvasLocation" x="5189" y="2379"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="FN6-d2-LDn">

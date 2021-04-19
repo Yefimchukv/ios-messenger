@@ -26,7 +26,17 @@ class ChatsListViewController: UIViewController {
     }
     
     public func createNewChat(result: [String: String ]) {
-        performSegue(withIdentifier: "userToChat", sender: self)
+        
+        guard let name = result["name"],
+              let email = result["email"] else {
+            return
+        }
+        
+        let vc = ChatViewController(with: email)
+        vc.isNewConversation = true
+        vc.title = name
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -44,7 +54,12 @@ extension ChatsListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "userToChat", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = ChatViewController(with: "sgdfg@test.com")
+        vc.title = "Jenny Smith"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -35,6 +35,9 @@ class SignInViewController: UIViewController {
                 print(error!)
                 return
             }
+            
+            UserDefaults.standard.set(email, forKey: "email")
+            
             print("Logged In as: \(result.user)")
             self?.loadingBar.stopAnimating()
             self?.performSegue(withIdentifier: "signInToChats", sender: self)
