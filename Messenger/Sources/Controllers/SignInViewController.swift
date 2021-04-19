@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailOrUserNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loadingBar: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +23,7 @@ class SignInViewController: UIViewController {
     //MARK: - Email/password Sign In
     
     @IBAction func enteringAccountFinished(_ sender: UITextField) {
+        loadingBar.startAnimating()
         guard let email = emailOrUserNameTextField.text,
               let password = passwordTextField.text else {
             print("Failed to Log In, check your data")
@@ -34,6 +36,7 @@ class SignInViewController: UIViewController {
                 return
             }
             print("Logged In as: \(result.user)")
+            self?.loadingBar.stopAnimating()
             self?.performSegue(withIdentifier: "signInToChats", sender: self)
             
         }

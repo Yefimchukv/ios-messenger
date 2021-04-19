@@ -71,7 +71,12 @@ PODS:
   - GoogleUtilities/UserDefaults (7.2.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - InputBarAccessoryView (5.2.3):
+    - InputBarAccessoryView/Core (= 5.2.3)
+  - InputBarAccessoryView/Core (5.2.3)
   - leveldb-library (1.22)
+  - MessageKit (3.5.0):
+    - InputBarAccessoryView (~> 5.2.1)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -83,6 +88,7 @@ DEPENDENCIES:
   - Firebase (= 7.4-M1)
   - Firebase/Auth (= 7.4-M1)
   - Firebase/Database (= 7.4-M1)
+  - MessageKit
 
 SPEC REPOS:
   trunk:
@@ -97,7 +103,9 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - InputBarAccessoryView
     - leveldb-library
+    - MessageKit
     - nanopb
     - PromisesObjC
 
@@ -113,10 +121,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  InputBarAccessoryView: f814a0317d47687fafc6bac9e4df6015eaf5b764
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MessageKit: fb539583599cd914e8e2d41fe7bdceb4bf686565
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 06b8e1e34f59e9c27a68d73d6ff5b25d4e6e8143
+PODFILE CHECKSUM: 71c217f1054efbd7e363f060c8e271fc311f5e89
 
 COCOAPODS: 1.10.1

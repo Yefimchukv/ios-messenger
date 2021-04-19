@@ -11,4 +11,6 @@ pod 'Firebase', '7.4-M1'
 pod 'Firebase/Auth', '7.4-M1'
 pod 'Firebase/Database', '7.4-M1'
 
+pod 'MessageKit'
+
 end

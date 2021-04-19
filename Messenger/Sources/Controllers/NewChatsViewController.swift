@@ -11,11 +11,11 @@ import Firebase
 
 class NewChatsViewController: UIViewController {
     
+    public var completion: (([String: String]) -> (Void))?
     private var users = [[String: String]]()
-    
     private var results = [[String: String]]()
     private var hasFetched = false
-    
+     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,8 +38,16 @@ extension NewChatsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        //start chat
+        let targetUserData = results[indexPath.row]
+        
+        dismiss(animated: true, completion: { [weak self] in
+            guard let self = self else { return }
+            self.completion?(targetUserData)
+            ChatsListViewController().createNewChat(result: targetUserData)
+        })
+        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        performSegue(withIdentifier: "newUserToChat", sender: nil)
     }
 }
 
@@ -96,9 +104,9 @@ extension NewChatsViewController: UISearchBarDelegate {
     }
     
     func updateUI() {
-//        if !results.isEmpty {
-            self.tableView.reloadData()
-//        }
+        //        if !results.isEmpty {
+        self.tableView.reloadData()
+        //        }
     }
     
 }
