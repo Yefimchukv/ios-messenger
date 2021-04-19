@@ -17,12 +17,12 @@ class ChatsListViewController: UIViewController {
     }
     
     @IBAction func newChatButtonPressed(_ sender: UIBarButtonItem) {
-        NewChatsViewController().completion = { [weak self] result in
-            guard let self = self else { return }
-            print("\(result)")
-            self.createNewChat(result: result)
+        let vc = NewChatsViewController()
+        vc.completion = { [weak self] result in
+            self?.createNewChat(result: result)
         }
-        performSegue(withIdentifier: "newChats", sender: self)
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true)
     }
     
     public func createNewChat(result: [String: String ]) {

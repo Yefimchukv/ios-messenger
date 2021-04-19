@@ -16,14 +16,61 @@ class NewChatsViewController: UIViewController {
     private var results = [[String: String]]()
     private var hasFetched = false
      
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
-    
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search for Users..."
+        return searchBar
+    }()
+
+    private let tableView: UITableView = {
+        let table = UITableView()
+        table.isHidden = true
+        table.register(UITableViewCell.self,
+                       forCellReuseIdentifier: "cell")
+        return table
+    }()
+
+    private let noResultsLabel: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.text = "No Results"
+        label.textAlignment = .center
+        label.textColor = .green
+        label.font = .systemFont(ofSize: 21, weight: .medium)
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addSubview(noResultsLabel)
+        view.addSubview(tableView)
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        searchBar.delegate = self
+        view.backgroundColor = .white
+        navigationController?.navigationBar.topItem?.titleView = searchBar
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(dismissSelf))
         searchBar.becomeFirstResponder()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+        noResultsLabel.frame = CGRect(x: view.layer.bounds.width/4,
+                                      y: (view.layer.bounds.height-200)/2,
+                                      width: view.layer.bounds.width/2,
+                                      height: 200)
+    }
+
+    @objc private func dismissSelf() {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - Tableview description
@@ -33,21 +80,18 @@ extension NewChatsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chatUsersCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = results[indexPath.row]["name"]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let targetUserData = results[indexPath.row]
         
         dismiss(animated: true, completion: { [weak self] in
             guard let self = self else { return }
             self.completion?(targetUserData)
-            ChatsListViewController().createNewChat(result: targetUserData)
         })
-        
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        performSegue(withIdentifier: "newUserToChat", sender: nil)
     }
 }
 
@@ -104,9 +148,15 @@ extension NewChatsViewController: UISearchBarDelegate {
     }
     
     func updateUI() {
-        //        if !results.isEmpty {
-        self.tableView.reloadData()
-        //        }
+        if results.isEmpty {
+            self.noResultsLabel.isHidden = false
+            self.tableView.isHidden = true
+        }
+        else {
+            self.noResultsLabel.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
     
 }
