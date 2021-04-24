@@ -250,11 +250,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mXM-jg-KJ5">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-Mx-9ND">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="DO1-gA-fPF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" systemColor="systemGreenColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5QZ-UI-RE1"/>
+                                    <constraint firstAttribute="width" constant="50" id="HWH-2E-sm1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="yNB-kO-ny5"/>
+                                </constraints>
+                            </stackView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mXM-jg-KJ5">
                                 <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="users" id="I85-df-N3z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" id="I85-df-N3z" customClass="ChatTableViewCell" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I85-df-N3z" id="ze3-Iw-Cx7">
@@ -270,10 +285,12 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5OQ-Y4-ifa"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mXM-jg-KJ5" firstAttribute="leading" secondItem="5OQ-Y4-ifa" secondAttribute="leading" id="CD7-oq-6bk"/>
                             <constraint firstItem="5OQ-Y4-ifa" firstAttribute="bottom" secondItem="mXM-jg-KJ5" secondAttribute="bottom" id="Jri-wW-lKe"/>
+                            <constraint firstItem="P4u-Mx-9ND" firstAttribute="centerX" secondItem="g4Q-Uw-UeG" secondAttribute="centerX" id="tyE-Jj-F41"/>
+                            <constraint firstItem="P4u-Mx-9ND" firstAttribute="centerY" secondItem="g4Q-Uw-UeG" secondAttribute="centerY" id="wRh-4y-pLm"/>
                             <constraint firstItem="5OQ-Y4-ifa" firstAttribute="trailing" secondItem="mXM-jg-KJ5" secondAttribute="trailing" id="xSA-QB-8KA"/>
                             <constraint firstItem="mXM-jg-KJ5" firstAttribute="top" secondItem="5OQ-Y4-ifa" secondAttribute="top" id="zTT-U4-ZU1"/>
                         </constraints>
@@ -286,6 +303,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="spinner" destination="DO1-gA-fPF" id="HDP-lu-lTW"/>
                         <outlet property="tableView" destination="mXM-jg-KJ5" id="2dt-Mf-MK0"/>
                         <segue destination="pIM-Qo-pcT" kind="show" identifier="" id="bwu-LJ-tI5"/>
                         <segue destination="5E4-ml-9mw" kind="showDetail" identifier="" id="ght-O7-KL4"/>
@@ -293,12 +311,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qou-Om-ycs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4774" y="1644"/>
+            <point key="canvasLocation" x="4773.8461538461534" y="1643.6018957345971"/>
         </scene>
         <!--Search-->
         <scene sceneID="TY0-zo-8hY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-C2-aDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="5E4-ml-9mw" customClass="NewChatsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ThL-AP-OIU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
@@ -351,13 +368,13 @@
                         <outlet property="tableView" destination="Zfq-hb-eX7" id="anK-l5-W4R"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aT8-C2-aDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4302" y="2379"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="GzB-nL-J0K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzj-h6-Fbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pIM-Qo-pcT" customClass="ChatViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wux-bv-Vim">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -367,6 +384,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wWl-PG-aV8"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzj-h6-Fbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5189" y="2379"/>
         </scene>
@@ -464,9 +482,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

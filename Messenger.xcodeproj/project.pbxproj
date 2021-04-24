@@ -14,6 +14,9 @@
 		8599BC732629896200C05B0D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599BC722629896200C05B0D /* ChatViewController.swift */; };
 		8599BC8926298DC000C05B0D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599BC8826298DC000C05B0D /* Message.swift */; };
 		8599BC8C26298DCC00C05B0D /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599BC8B26298DCC00C05B0D /* Sender.swift */; };
+		85B3737526314715000B7C96 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3737426314715000B7C96 /* ChatTableViewCell.swift */; };
+		85B3737926314B0A000B7C96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3737826314B0A000B7C96 /* Extensions.swift */; };
+		85B3737C26314D07000B7C96 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3737B26314D07000B7C96 /* Chat.swift */; };
 		85D5A4E326274C1D000BFD65 /* NewChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5A4E226274C1D000BFD65 /* NewChatsViewController.swift */; };
 		85DD360B2626FF6000B25C93 /* ChatAppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DD360A2626FF6000B25C93 /* ChatAppUser.swift */; };
 		85FAE5132623682300201AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FAE5122623682300201AD3 /* AppDelegate.swift */; };
@@ -37,6 +40,9 @@
 		8599BC722629896200C05B0D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8599BC8826298DC000C05B0D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8599BC8B26298DCC00C05B0D /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		85B3737426314715000B7C96 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		85B3737826314B0A000B7C96 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		85B3737B26314D07000B7C96 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		85D5A4E226274C1D000BFD65 /* NewChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatsViewController.swift; sourceTree = "<group>"; };
 		85DD360A2626FF6000B25C93 /* ChatAppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUser.swift; sourceTree = "<group>"; };
 		85FAE50F2623682300201AD3 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85B3737726314AF8000B7C96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85B3737826314B0A000B7C96 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		85FAE5062623682300201AD3 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +124,7 @@
 		85FAE52726240C6000201AD3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				85B3737726314AF8000B7C96 /* Extensions */,
 				85FAE5122623682300201AD3 /* AppDelegate.swift */,
 				85FAE5142623682300201AD3 /* SceneDelegate.swift */,
 				85FAE52C26240C8C00201AD3 /* Models */,
@@ -150,6 +165,7 @@
 				85DD360A2626FF6000B25C93 /* ChatAppUser.swift */,
 				8599BC8826298DC000C05B0D /* Message.swift */,
 				8599BC8B26298DCC00C05B0D /* Sender.swift */,
+				85B3737B26314D07000B7C96 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				85FAE5182623682300201AD3 /* Main.storyboard */,
+				85B3737426314715000B7C96 /* ChatTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +311,7 @@
 			files = (
 				85DD360B2626FF6000B25C93 /* ChatAppUser.swift in Sources */,
 				8508D0002626EDFA00E253B4 /* TabBarViewController.swift in Sources */,
+				85B3737C26314D07000B7C96 /* Chat.swift in Sources */,
 				85FAE5172623682300201AD3 /* SignInViewController.swift in Sources */,
 				85FAE5132623682300201AD3 /* AppDelegate.swift in Sources */,
 				85FAE53B2624140E00201AD3 /* SettingsViewController.swift in Sources */,
@@ -303,7 +321,9 @@
 				8599BC8C26298DCC00C05B0D /* Sender.swift in Sources */,
 				85FAE53126240FD700201AD3 /* SignUpViewController.swift in Sources */,
 				8599BC8926298DC000C05B0D /* Message.swift in Sources */,
+				85B3737926314B0A000B7C96 /* Extensions.swift in Sources */,
 				85D5A4E326274C1D000BFD65 /* NewChatsViewController.swift in Sources */,
+				85B3737526314715000B7C96 /* ChatTableViewCell.swift in Sources */,
 				8599BC732629896200C05B0D /* ChatViewController.swift in Sources */,
 				856BD9142626FAE1002ADFA8 /* DatabaseManager.swift in Sources */,
 			);

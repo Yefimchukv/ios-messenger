@@ -49,6 +49,8 @@ class SignUpViewController: UIViewController {
                 
                 DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, username: username, email: email), completion: { success in
                     if success {
+                        UserDefaults.standard.set(email, forKey: "email")
+                        UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
                         print("success!")
                     } else {
                         print("error")
